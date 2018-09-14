@@ -14,11 +14,6 @@ const app = express();
 // Config middlewares
 app.use(express.static('static'));
 
-// Response with favicon file
-app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, 'favicon.ico'));
-});
-
 // Response with home.html
 app.get('/ProjectDory', (req, res) => {
   res.sendFile(path.join(__dirname, 'home.html'));
