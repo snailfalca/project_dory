@@ -1,5 +1,4 @@
 // Node.js modules
-const fs = require('fs');
 const path = require('path');
 
 // 3rd party modules
@@ -17,6 +16,11 @@ app.use(express.static('static'));
 // Response with home.html
 app.get('/ProjectDory', (req, res) => {
   res.sendFile(path.join(__dirname, 'home.html'));
+});
+
+// Redirect all requests to /ProjectDory
+app.get('*', (req, res) => {
+  res.redirect('/ProjectDory');
 });
 
 // Start server
